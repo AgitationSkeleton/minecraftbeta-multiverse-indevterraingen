@@ -1,0 +1,5 @@
+name: IndevMobRules
+main: IndevMobRules
+version: 1.0.0
+description: Reproduces Minecraft Indev finite-level mob spawning and climate rules.
+

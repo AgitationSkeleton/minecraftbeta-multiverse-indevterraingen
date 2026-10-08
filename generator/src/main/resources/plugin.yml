@@ -1,0 +1,6 @@
+name: IndevWorldGen
+main: IndevWorldGen
+version: 1.0.0
+load: startup
+description: Faithful all-in-one Minecraft Indev terrain generator for Poseidon Beta 1.7.3.
+
