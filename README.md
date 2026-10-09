@@ -43,9 +43,9 @@ Examples:
 
 ```text
 /mv create indevnormal normal -g IndevWorldGen:inland,normal
-/mv create indevhell nether -g IndevWorldGen:inland,hell
+/mv create indevhell nether -g IndevWorldGen:island,hell
 /mv create indevparadise normal -g IndevWorldGen:island,paradise
-/mv create indevfloating skylands -g IndevWorldGen:floating,normal
+/mv create indevfloating normal -g IndevWorldGen:floating,normal
 /mv create indevhellfloating nether -g IndevWorldGen:floating,hell
 /mv create indevforest normal -g IndevWorldGen:flat,woods
 ```
@@ -107,4 +107,3 @@ Generator caches live in `plugins/IndevWorldGen/cache`. Back up a world before
 regenerating it. To regenerate, stop the server, archive the world directory and
 its matching cache file, then restart. If Dynmap is installed, archive its tile
 directory for that world as well so stale tiles are not reused.
-

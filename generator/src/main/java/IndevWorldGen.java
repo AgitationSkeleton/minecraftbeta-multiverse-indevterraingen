@@ -131,8 +131,9 @@ public final class IndevWorldGen extends JavaPlugin {
                                 chunk[column + y] = (byte) level.surroundingGroundBlock;
                             }
                             int fluidTop = Math.min(Math.max(0, level.waterLevel), targetHeight);
+                            int borderFluid = stationaryFluid(level.fluidBlock);
                             for (int y = groundTop; y < fluidTop; y++) {
-                                chunk[column + y] = (byte) level.fluidBlock;
+                                chunk[column + y] = (byte) borderFluid;
                             }
                         }
                         continue;
@@ -151,6 +152,12 @@ public final class IndevWorldGen extends JavaPlugin {
             int outsideX = sourceX < 0 ? -sourceX : (sourceX >= level.width ? sourceX - level.width + 1 : 0);
             int outsideZ = sourceZ < 0 ? -sourceZ : (sourceZ >= level.length ? sourceZ - level.length + 1 : 0);
             return Math.max(outsideX, outsideZ) <= FINITE_BORDER_WIDTH;
+        }
+
+        private int stationaryFluid(int blockId) {
+            if (blockId == Material.WATER.getId()) return Material.STATIONARY_WATER.getId();
+            if (blockId == Material.LAVA.getId()) return Material.STATIONARY_LAVA.getId();
+            return blockId;
         }
 
         public Location getFixedSpawnLocation(World world, Random random) {
